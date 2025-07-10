@@ -4,64 +4,38 @@
   <meta charset="utf-8">
   <title>Sunday Funday Preview</title>
   <style>
-    /* Ensure the image maps scale correctly and are block-level */
-    img[usemap] {
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    td {
+      padding: 0;
+    }
+    img {
       display: block;
+      border: none;
+      width: 100%;
     }
   </style>
 </head>
-<body style="margin:0; padding:0;">
-  <!--
-    The <img
-    src="https://raw.githubusercontent.com/cspetnagel/sunday-funday-email/main/sunday-funday-flyer.png"
-    usemap="#flyerMap"
-    alt="Sunday Funday Flyer"
-    style="display:block;"
-  >
-
-  <map name="flyerMap" id="flyerMap"> definition below.
-    width and height ensure the displayed size matches the map's coordinate system.
-  -->
-  <img
-    src="https://raw.githubusercontent.com/cspetnagel/sunday-funday-email/main/sunday-funday-flyer.png"
-    usemap="#flyerMap"
-    alt="Sunday Funday Flyer"
-    width="611"
-    height="791"
-  >
-
-  <!--
-    The <map> element defines clickable areas on the linked image.
-    Each <area> tag creates one clickable region, using the 'coords' attribute for its bounds.
-    The 'href' attribute on an <area> is what the browser navigates to when that region is clicked.
-  -->
-  <map name="flyerMap" id="flyerMap">
-    <!--
-      RSVP hotspot:
-      - shape="rect" defines a rectangular area
-      - coords="300,548,600,595" are x1,y1,x2,y2 in pixels
-      - href specifies the URL to open when clicked
-    -->
-    <area
-      shape="rect"
-      coords="300,548,600,595"
-      href="https://forms.office.com/r/GYAjSUiAiU"
-      alt="RSVP Now"
-      target="_blank"
-    >
-
-    <!--
-      Full-map hotspot:
-      - Clicking this region opens the hosted PDF map
-      - href is the PDF URL, target="_blank" ensures it opens in a new tab
-    -->
-    <area
-      shape="rect"
-      coords="475,680,729,868"
-      href="https://cspetnagel.github.io/sunday-funday-email/funland-map.pdf"
-      alt="View Full Map & Activities"
-      target="_blank"
-    >
-  </map>
+<body>
+  <!-- Table layout with image slices for clickable zones -->
+  <table>
+    <tr>
+      <td>
+        <!-- Full flyer image without links (background) -->
+        <img src="https://raw.githubusercontent.com/cspetnagel/sunday-funday-email/main/sunday-funday-flyer.png" alt="Sunday Funday Flyer" />
+      </td>
+    </tr>
+    <tr>
+      <td style="position: relative;">
+        <!-- Overlay links using transparent 1px gifs stretched to match the image zones -->
+        <a href="https://forms.office.com/r/GYAjSUiAiU" target="_blank" style="position: absolute; top: 578px; left: 90px; width: 170px; height: 28px; display: block;"></a>
+        <a href="https://cspetnagel.github.io/sunday-funday-email/funland-map.pdf" target="_blank" style="position: absolute; top: 740px; left: 370px; width: 170px; height: 120px; display: block;"></a>
+      </td>
+    </tr>
+  </table>
 </body>
 </html>
