@@ -3,18 +3,25 @@
 <head>
   <meta charset="utf-8">
   <title>Sunday Funday Preview</title>
+  <style>
+    /* Ensure the image maps scale correctly and are block-level */
+    img[usemap] {
+      display: block;
+    }
+  </style>
 </head>
-<body style="margin:0; padding:1em;">
+<body style="margin:0; padding:0;">
+  <!-- Inline image with explicit dimensions to match map coords -->
   <img
     src="https://raw.githubusercontent.com/cspetnagel/sunday-funday-email/main/sunday-funday-flyer.png"
     usemap="#flyerMap"
     alt="Sunday Funday Flyer"
     width="611"
     height="791"
-    style="display:block;"
   >
 
-  <map name="flyerMap">
+  <!-- Define the clickable areas -->
+  <map name="flyerMap" id="flyerMap">
     <!-- RSVP hotspot -->
     <area
       shape="rect"
